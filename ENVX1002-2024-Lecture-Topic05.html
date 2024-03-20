@@ -443,53 +443,6 @@ Floris van Ogtrop
 </ul>
 </section>
 
-<section id="confidence-intervals" class="title-slide slide level1 center">
-<h1>Confidence intervals</h1>
-<ul>
-<li>A confidence interval is a range of values, derived from a sample, that is likely to contain the value of an unknown population parameter.</li>
-<li>Confidence are important and many people prefer them to formal hypothesis tests because they give a range of values rather than a single value.</li>
-<li>There are two types we are going to look at:
-<ul>
-<li>Confidence interval where we <strong>know</strong> the population variance</li>
-<li>Confidence interval where we <strong>do not know</strong> the population variance</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="confidence-intervals---known-variance" class="title-slide slide level1 center">
-<h1>Confidence intervals - known variance</h1>
-<ul>
-<li>Assuming our sample comes from a normal population, we can calculate the confidence interval for the mean of a population when the population <strong>variance is known</strong>. An example may be in manufacturing where we know the variance of a process.</li>
-<li>The formula for the confidence interval is:</li>
-</ul>
-<p><span class="math inline">CI = \bar{y} \pm Z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}</span></p>
-<p>for the 95% confidence interval, <span class="math inline">\alpha = 0.05</span> and <span class="math inline">Z_{\alpha/2} = 1.96</span> i.e.&nbsp;2 standard errors from the mean.</p>
-</section>
-
-<section id="confidence-intervals---known-variance-1" class="title-slide slide level1 center">
-<h1>Confidence intervals - known variance</h1>
-<ul>
-<li><span class="math inline">\bar y</span> is a random variable with a sampling distribution.</li>
-<li>Because there is an infinite number of values of <span class="math inline">\bar y</span>, there is an infinite number of intervals of the form <span class="math inline">CI = \bar{y} \pm 1.96 \cdot \frac{\sigma}{\sqrt{n}}</span>.</li>
-<li>The probability statement says that 95% of these intervals will actually include <span class="math inline">\mu</span> between the limits.</li>
-<li>For any one interval, <span class="math inline">CI = \bar{y} \pm 1.96 \cdot \frac{\sigma}{\sqrt{n}}</span>, we say that we are 95% confident that <span class="math inline">\mu</span> lies between these limits.</li>
-</ul>
-</section>
-
-<section id="confidence-intervals---known-variance-2" class="title-slide slide level1 center">
-<h1>Confidence intervals - known variance</h1>
-<p><strong>Example</strong></p>
-<p>Say we have measured the weights of 6 chocolate bars from Florry’s chocolate factory. The readings were:</p>
-<p>48 43 45 51 49 40</p>
-<p>The mean for these six values is <span class="math inline">\bar y = 46</span>g. Let’s assume that the bar weights follow a normal distribution and that <span class="math inline">\sigma = 1</span>g These assumptions allow us to calculate a 95% z-based confidence interval:</p>
-<p>So the 95% CI for the current example is</p>
-<p><span class="math inline">CI = 46 \pm 1.96 \cdot \frac{1}{\sqrt{6}}</span> or <span class="math inline">CI = 46 \pm 0.80</span> or <span class="math inline">CI = (45.20, 46.80)</span></p>
-<p>So we are 95% confident that the true mean weight of the chocolate bars is between 45.20 and 46.80g.</p>
-<ul>
-<li>We will calculate confidence intervals with <strong>unknown variance</strong> in later on.</li>
-</ul>
-</section>
-
 <section id="hypothesis-testing" class="title-slide slide level1 center">
 <h1>Hypothesis testing</h1>
 <ul>
@@ -540,21 +493,57 @@ Floris van Ogtrop
 
 <section id="hypothesis-testing-3" class="title-slide slide level1 center">
 <h1>Hypothesis testing</h1>
+<p><strong>We will follow the steps in hypothesis testing</strong></p>
+<ul>
+<li>Choose level of significance (usually 0.05)</li>
+<li>Write null and alternate hypotheses</li>
+<li>Check assumptions</li>
+<li>Calculate test statistic</li>
+<li>Obtain P-value or critical value</li>
+<li>Make statistical conclusion</li>
+<li>Write a scientific (biological) conclusion</li>
+</ul>
+</section>
+
+<section id="hypothesis-testing-4" class="title-slide slide level1 center">
+<h1>Hypothesis testing</h1>
+<p><strong>Acronyms</strong></p>
+<p>Sometimes we use HATPC to remember these steps - HAT Prevent Cancer - come up with your own</p>
+<ul>
+<li><strong>H:</strong> Hypothesis</li>
+<li><strong>A:</strong> Assumptions</li>
+<li><strong>T:</strong> Test statistic</li>
+<li><strong>P:</strong> P-Value</li>
+<li><strong>C:</strong> Conclusion</li>
+</ul>
+</section>
+
+<section id="hypothesis-h" class="title-slide slide level1 center">
+<h1>Hypothesis (H)</h1>
 <ul>
 <li>The <strong>null hypothesis</strong> <span class="math inline">(H_0)</span> assumes that the difference between the observation (data) and the expected value is due to chance</li>
 <li>The <strong>alternative hypothesis</strong> <span class="math inline">(H_1)</span> assumes that the difference between the observed value (data) and expected value is NOT due to chance alone.</li>
 </ul>
 </section>
 
-<section id="test-statistic" class="title-slide slide level1 center">
-<h1>Test Statistic</h1>
+<section id="assumptions-a" class="title-slide slide level1 center">
+<h1>Assumptions (A)</h1>
+<ul>
+<li>We need to check the assumptions of the test we are using.</li>
+<li>For example, if we are using a one sample t-test we need to check the assumption of normality.</li>
+<li>This is done by looking at the distribution of our data (EDA) and using a hypothesis test such as the Shapiro-Wilk test.</li>
+<li>If the assumptions are not met, we may need to transform the data or use a non-parametric test.</li>
+</ul>
+</section>
+
+<section id="test-statistic-t" class="title-slide slide level1 center">
+<h1>Test Statistic (T)</h1>
 <p>Measures the difference between what is observed in the data and what is expected from the null hypothesis.</p>
 <p><span class="math inline">\text{Test statistic}=\frac{\text{Observed value - Expected value}}{\text{Standard error}}</span></p>
 </section>
 
-<section>
-<section id="p-value" class="title-slide slide level1 center">
-<h1>P-Value</h1>
+<section id="p-value-p" class="title-slide slide level1 center">
+<h1>P-Value (P)</h1>
 <p><strong>What is P-value?</strong></p>
 <ul>
 <li>The P-value is a way of weighing up whether the sample (data) is consistent with <span class="math inline">H_0</span></li>
@@ -564,13 +553,15 @@ Floris van Ogtrop
 <li>The P-value is the chance of observing the test statistic (or something more extreme) if the <span class="math inline">H_0</span> is true.</li>
 </ul>
 </section>
-<section id="p-value-1" class="slide level2">
-<h2>P-Value</h2>
-<p><strong>What does this have to do with sampling distributions?</strong></p>
 
-<img data-src="images/two_tail.png" class="r-stretch"></section></section>
-<section id="p-value-2" class="title-slide slide level1 center">
-<h1>P-Value</h1>
+<section id="p-value-p-1" class="title-slide slide level1 center">
+<h1>P-Value (P)</h1>
+<p><strong>What does this have to do with sampling distributions??</strong></p>
+
+<img data-src="images/two_tail.png" class="r-stretch"></section>
+
+<section id="p-value-p-2" class="title-slide slide level1 center">
+<h1>P-Value (P)</h1>
 <p><strong>“If the P-value is low the Null hypothesis must go.”</strong></p>
 <ul>
 <li>So we calculate the P-value to assess the level of evidence against the Null hypothesis.
@@ -583,8 +574,8 @@ Floris van Ogtrop
 </ul>
 </section>
 
-<section id="p-value-3" class="title-slide slide level1 center">
-<h1>P-Value</h1>
+<section id="p-value-p-3" class="title-slide slide level1 center">
+<h1>P-Value (P)</h1>
 <p><strong>Common mistakes</strong></p>
 <ul>
 <li>The p-value is not the chance that the NULL hypothesis is true</li>
@@ -596,8 +587,8 @@ Floris van Ogtrop
 </ul>
 </section>
 
-<section id="p-value-4" class="title-slide slide level1 center">
-<h1>P-value</h1>
+<section id="p-value-p-4" class="title-slide slide level1 center">
+<h1>P-value (P)</h1>
 <p><strong>Controversy</strong></p>
 <p><a href="https://www.nature.com/news/statisticians-issue-warning-over-misuse-of-p-values-1.19503">Nature article 1</a></p>
 <p><a href="https://www.nature.com/articles/d41586-019-00857-9">Nature article 2</a></p>
@@ -607,9 +598,17 @@ Floris van Ogtrop
 </ul>
 </section>
 
-<section>
-<section id="hypothesis-testing-4" class="title-slide slide level1 center">
-<h1>Hypothesis testing</h1>
+<section id="a-little-more-on-the-p-value" class="title-slide slide level1 center">
+<h1>A little more on the P-value</h1>
+<p>Why is the p-value 0.05?</p>
+<ul>
+<li>The p-value is the probability of observing a test statistic as extreme as the one calculated, assuming the null hypothesis is true.</li>
+<li>It is based on the idea we 1 in 20 times we will reject the null hypothesis when it is true.</li>
+</ul>
+</section>
+
+<section id="tails" class="title-slide slide level1 center">
+<h1>Tails</h1>
 <p><strong>Tails??</strong></p>
 
 <img data-src="images/tails.png" class="r-stretch"><ul>
@@ -617,8 +616,9 @@ Floris van Ogtrop
 <li>One tailed tests are used when we are specifically interested in whether the observed value is greater or less than the expected value. Examples are in quality control and production processes.</li>
 </ul>
 </section>
-<section id="hypothesis-testing-5" class="slide level2">
-<h2>Hypothesis testing</h2>
+
+<section id="tails-1" class="title-slide slide level1 center">
+<h1>Tails</h1>
 <ul>
 <li><p>Let say we would like to test whether a sample or population behaves according to a known or expected value. For example, ENVX1002 students have a mean heart rate of 70 beats per minute <span class="math inline">(c)</span>. We could test the relationship between our population or sample mean <span class="math inline">(\mu)</span> or <span class="math inline">(y)</span> and our expected mean <span class="math inline">(c)</span>.</p>
 <ul>
@@ -632,9 +632,10 @@ Floris van Ogtrop
 <li><p>We usually use the first (two tailed) form unless we are specifically interested in testing whether the difference is in one direction or the means of two variables are equivalent (i.e.&nbsp;equivalence testing in production)</p></li>
 <li><p>In this course we are assuming that the population/sample is normally distributed.</p></li>
 </ul>
-</section></section>
-<section id="hypothesis-testing-6" class="title-slide slide level1 center">
-<h1>Hypothesis testing</h1>
+</section>
+
+<section id="type-error" class="title-slide slide level1 center">
+<h1>Type error??</h1>
 <p><strong>Type I error</strong></p>
 <ul>
 <li>False positive: we reject H0 when it is true</li>
@@ -647,8 +648,8 @@ Floris van Ogtrop
 <img data-src="images/error.png" class="r-stretch"><p><strong>Note:</strong> Decreasing the significance level (<span class="math inline">\alpha</span>) to say 0.01 will increase the probability of type II error</p>
 </section>
 
-<section id="hypothesis-testing-7" class="title-slide slide level1 center">
-<h1>Hypothesis testing</h1>
+<section id="sample-size-and-power" class="title-slide slide level1 center">
+<h1>Sample size and power</h1>
 <p><strong>Sample size &amp; Power</strong></p>
 <ul>
 <li>While we won’t do these calculations, it is important to think about sample size and power. For example, when comparing two means we can estimate the sample size required using the following</li>
@@ -663,8 +664,8 @@ Floris van Ogtrop
 </ul>
 </section>
 
-<section id="hypothesis-testing-8" class="title-slide slide level1 center">
-<h1>Hypothesis testing</h1>
+<section id="sample-size-and-power-1" class="title-slide slide level1 center">
+<h1>Sample size and power</h1>
 <p><strong>Sample size &amp; Power</strong></p>
 <p>In a nut shell…</p>
 <p><strong>High Power:</strong> If a test has high power (close to 1), it means that the probability of committing a Type II error is low. This indicates that the test is very likely to detect an effect or difference when one exists.</p>
@@ -672,35 +673,30 @@ Floris van Ogtrop
 <p><strong>Sample size:</strong> Generally power increases as sample size increases, but so does time and costs!</p>
 </section>
 
-<section id="hypothesis-testing-9" class="title-slide slide level1 center">
-<h1>Hypothesis testing</h1>
-<p><strong>Steps in hypothesis testing</strong></p>
+<section id="the-t-distribution-and-degrees-of-freedom" class="title-slide slide level1 center">
+<h1>The t-distribution and degrees of freedom?</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The T-distribution has the following properties:</p>
 <ul>
-<li>Choose level of significance (usually 0.05)</li>
-<li>Write null and alternate hypotheses</li>
-<li>Check assumptions</li>
-<li>Calculate test statistic</li>
-<li>Obtain P-value or critical value</li>
-<li>Make statistical conclusion</li>
-<li>Write a scientific (biological) conclusion</li>
+<li><p>It is bell-shaped, symmetrical about the mean, median and mode, which are all of equal value. [It is a little flatter than the normal distribution.]</p></li>
+<li><p>The area under the curve = 1, as is the case for all continuous probability distributions.</p></li>
+<li><p>The probability density function is defined by three parameters, the mean <span class="math inline">\mu</span>, the standard deviation <span class="math inline">\sigma</span> and the sample size <span class="math inline">n</span>.</p></li>
+<li><p>The exact shape of the t distribution depends on the quantity called degrees of freedom, df. The df = n – 1 for any t distribution.</p></li>
 </ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/tdist.png"></p>
+<figcaption>Comparing the shapes of the Student’s T and the Z (normal) curve</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
-<section id="hypothesis-testing-10" class="title-slide slide level1 center">
-<h1>Hypothesis testing</h1>
-<p><strong>Steps in hypothesis testing</strong></p>
-<p>Sometimes we use HATPC to remember these steps - HAT Prevent Cancer - come up with your own</p>
-<ul>
-<li><strong>H:</strong> Hypothesis</li>
-<li><strong>A:</strong> Assumptions</li>
-<li><strong>T:</strong> Test statistic</li>
-<li><strong>P:</strong> P-Value</li>
-<li><strong>C:</strong> Conclusion</li>
-</ul>
-</section>
-
-<section id="example-one-sample-t-test" class="title-slide slide level1 center">
-<h1>Example: One sample t-test</h1>
+<section id="example-1-one-sample-t-test" class="title-slide slide level1 center">
+<h1>Example 1: One sample t-test</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -721,8 +717,8 @@ Floris van Ogtrop
 </div>
 </section>
 
-<section id="example-one-sample-t-test-1" class="title-slide slide level1 center">
-<h1>Example: One sample t-test</h1>
+<section id="example-1-one-sample-t-test-1" class="title-slide slide level1 center">
+<h1>Example 1: One sample t-test</h1>
 <p><span style="color: blue;"><strong>A</strong></span>ssumptions</p>
 <ul>
 <li>This time we are testing a data set where the <strong>variance is unknown</strong>.</li>
@@ -734,15 +730,15 @@ Floris van Ogtrop
 </ul>
 </section>
 
-<section id="example-one-sample-t-test-2" class="title-slide slide level1 center">
-<h1>Example: One sample t-test</h1>
+<section id="example-1-one-sample-t-test-2" class="title-slide slide level1 center">
+<h1>Example 1: One sample t-test</h1>
 <p><span style="color: blue;"><strong>A</strong></span>ssumptions</p>
 <p><strong>Small Samples:</strong> With small samples (typically n &lt; 30), even slight deviations from normality can significantly impact the t-test’s validity because the t-test relies heavily on the assumption of normality in this scenario. However, if the data are symmetrically distributed and don’t have outliers, the t-test can be robust to mild violations of normality. Note that the t-test adjusts for the sample size, so the larger the sample, the less important the normality assumption becomes.</p>
 <p><strong>Large Samples:</strong> For larger samples (n &gt; 30), the Central Limit Theorem (CLT) suggests that the distribution of the sample means tends to be normal, regardless of the population distribution. This means that for sufficiently large samples, the t-test can be robust to violations of normality. However, extreme skewness, heavy tails, or outliers can still affect the test’s performance.</p>
 </section>
 
-<section id="example-one-sample-t-test-3" class="title-slide slide level1 center">
-<h1>Example: One sample t-test</h1>
+<section id="example-1-one-sample-t-test-3" class="title-slide slide level1 center">
+<h1>Example 1: One sample t-test</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><span style="color: blue;"><strong>A</strong></span>ssumptions</p>
@@ -776,8 +772,8 @@ Floris van Ogtrop
 </div>
 </section>
 
-<section id="example-one-sample-t-test-4" class="title-slide slide level1 center">
-<h1>Example: One sample t-test</h1>
+<section id="example-1-one-sample-t-test-4" class="title-slide slide level1 center">
+<h1>Example 1: One sample t-test</h1>
 <p><span style="color: blue;"><strong>A</strong></span>ssumptions</p>
 <ul>
 <li>Let’s look at our mung bean trial data: We have data from 21 plots from a <em>completely randomised design</em> (look this up) done on our hippie friends farm. CBD treatment was used on all plots.</li>
@@ -813,8 +809,8 @@ Floris van Ogtrop
 </div>
 </section>
 
-<section id="example-one-sample-t-test-5" class="title-slide slide level1 center">
-<h1>Example: One sample t-test</h1>
+<section id="example-1-one-sample-t-test-5" class="title-slide slide level1 center">
+<h1>Example 1: One sample t-test</h1>
 <p><span style="color: blue;"><strong>A</strong></span>ssumptions</p>
 <ul>
 <li>We can also look at the 6 number summary and the histogram. The histogram looks quite symmetrical and the 6 number summary is quite symmetrical.</li>
@@ -832,7 +828,7 @@ Floris van Ogtrop
 </ul>
 </section>
 
-<section id="example-one-sample-t-test-6" class="title-slide slide level1 center">
+<section id="example-one-sample-t-test" class="title-slide slide level1 center">
 <h1>Example: One sample t-test</h1>
 <p><span style="color: blue;"><strong>A</strong></span>ssumptions</p>
 <ul>
@@ -864,8 +860,8 @@ W = 0.96569, p-value = 0.6371</code></pre>
 </div>
 </section>
 
-<section id="example-one-sample-t-test-7" class="title-slide slide level1 center">
-<h1>Example: One sample t-test</h1>
+<section id="example-1-one-sample-t-test-6" class="title-slide slide level1 center">
+<h1>Example 1: One sample t-test</h1>
 <p><span style="color: blue;"><strong>T</strong></span>est statistic</p>
 <p><strong>t-test</strong></p>
 <ul>
@@ -880,8 +876,8 @@ W = 0.96569, p-value = 0.6371</code></pre>
 </ul>
 </section>
 
-<section id="example-one-sample-t-test-8" class="title-slide slide level1 center">
-<h1>Example: One sample t-test</h1>
+<section id="example-1-one-sample-t-test-7" class="title-slide slide level1 center">
+<h1>Example 1: One sample t-test</h1>
 <p><span style="color: blue;"><strong>CI</strong></span> &amp; <span style="color: blue;"><strong>T</strong></span>-Statistic &amp; <span style="color: blue;"><strong>P</strong></span>-value</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -917,8 +913,8 @@ mean of x
 </div>
 </section>
 
-<section id="example-one-sample-t-test-9" class="title-slide slide level1 center">
-<h1>Example: One sample t-test</h1>
+<section id="example-1-one-sample-t-test-8" class="title-slide slide level1 center">
+<h1>Example 1: One sample t-test</h1>
 <p><span style="color: blue;"><strong>C</strong></span>onclusion</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -940,39 +936,55 @@ mean of x
 </div>
 </section>
 
-<section id="the-t-distribution-and-degrees-of-freedom" class="title-slide slide level1 center">
-<h1>The t-distribution and degrees of freedom?</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>The T-distribution has the following properties:</p>
+<section id="confidence-intervals" class="title-slide slide level1 center">
+<h1>Confidence intervals</h1>
 <ul>
-<li><p>It is bell-shaped, symmetrical about the mean, median and mode, which are all of equal value. [It is a little flatter than the normal distribution.]</p></li>
-<li><p>The area under the curve = 1, as is the case for all continuous probability distributions.</p></li>
-<li><p>The probability density function is defined by three parameters, the mean <span class="math inline">\mu</span>, the standard deviation <span class="math inline">\sigma</span> and the sample size <span class="math inline">n</span>.</p></li>
-<li><p>The exact shape of the t distribution depends on the quantity called degrees of freedom, df. The df = n – 1 for any t distribution.</p></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/tdist.png"></p>
-<figcaption>Comparing the shapes of the Student’s T and the Z (normal) curve</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-
-<section id="a-little-more-on-the-p-value" class="title-slide slide level1 center">
-<h1>A little more on the P-value</h1>
-<p>Why is the p-value 0.05?</p>
+<li>A confidence interval is a range of values, derived from a sample, that is likely to contain the value of an unknown population parameter.</li>
+<li>Confidence are important and many people prefer them to formal hypothesis tests because they give a range of values rather than a single value.</li>
+<li>There are two types we are going to look at:
 <ul>
-<li>The p-value is the probability of observing a test statistic as extreme as the one calculated, assuming the null hypothesis is true.</li>
-<li>It is based on the idea we 1 in 20 times we will reject the null hypothesis when it is true.</li>
+<li>Confidence interval where we <strong>know</strong> the population variance</li>
+<li>Confidence interval where we <strong>do not know</strong> the population variance</li>
+</ul></li>
 </ul>
 </section>
 
-<section id="a-little-more-on-confidence-intervals---unknown-variance" class="title-slide slide level1 center">
-<h1>A little more on confidence intervals - Unknown variance</h1>
+<section id="confidence-intervals---known-variance" class="title-slide slide level1 center">
+<h1>Confidence intervals - known variance</h1>
+<ul>
+<li>Assuming our sample comes from a normal population, we can calculate the confidence interval for the mean of a population when the population <strong>variance is known</strong>. An example may be in manufacturing where we know the variance of a process.</li>
+<li>The formula for the confidence interval is:</li>
+</ul>
+<p><span class="math inline">CI = \bar{y} \pm Z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}</span></p>
+<p>for the 95% confidence interval, <span class="math inline">\alpha = 0.05</span> and <span class="math inline">Z_{\alpha/2} = 1.96</span> i.e.&nbsp;2 standard errors from the mean.</p>
+</section>
+
+<section id="confidence-intervals---known-variance-1" class="title-slide slide level1 center">
+<h1>Confidence intervals - known variance</h1>
+<ul>
+<li><span class="math inline">\bar y</span> is a random variable with a sampling distribution.</li>
+<li>Because there is an infinite number of values of <span class="math inline">\bar y</span>, there is an infinite number of intervals of the form <span class="math inline">CI = \bar{y} \pm 1.96 \cdot \frac{\sigma}{\sqrt{n}}</span>.</li>
+<li>The probability statement says that 95% of these intervals will actually include <span class="math inline">\mu</span> between the limits.</li>
+<li>For any one interval, <span class="math inline">CI = \bar{y} \pm 1.96 \cdot \frac{\sigma}{\sqrt{n}}</span>, we say that we are 95% confident that <span class="math inline">\mu</span> lies between these limits.</li>
+</ul>
+</section>
+
+<section id="confidence-intervals---known-variance-2" class="title-slide slide level1 center">
+<h1>Confidence intervals - known variance</h1>
+<p><strong>Example</strong></p>
+<p>Say we have measured the weights of 6 chocolate bars from Florry’s chocolate factory. The readings were:</p>
+<p>48 43 45 51 49 40</p>
+<p>The mean for these six values is <span class="math inline">\bar y = 46</span>g. Let’s assume that the bar weights follow a normal distribution and that <span class="math inline">\sigma = 1</span>g These assumptions allow us to calculate a 95% z-based confidence interval:</p>
+<p>So the 95% CI for the current example is</p>
+<p><span class="math inline">CI = 46 \pm 1.96 \cdot \frac{1}{\sqrt{6}}</span> or <span class="math inline">CI = 46 \pm 0.80</span> or <span class="math inline">CI = (45.20, 46.80)</span></p>
+<p>So we are 95% confident that the true mean weight of the chocolate bars is between 45.20 and 46.80g.</p>
+<ul>
+<li>We will calculate confidence intervals with <strong>unknown variance</strong> in later on.</li>
+</ul>
+</section>
+
+<section id="confidence-intervals---unknown-variance" class="title-slide slide level1 center">
+<h1>Confidence intervals - Unknown variance</h1>
 <ul>
 <li><p>We can also calculate a confidence interval when we do not know the population variance.</p></li>
 <li><p>The formula for the confidence interval is:<br>
@@ -988,16 +1000,16 @@ mean of x
 </div>
 </section>
 
-<section id="a-little-more-on-confidence-intervals---unknown-variance-1" class="title-slide slide level1 center">
-<h1>A little more on confidence intervals - Unknown variance</h1>
+<section id="confidence-intervals---unknown-variance-1" class="title-slide slide level1 center">
+<h1>Confidence intervals - Unknown variance</h1>
 <ul>
 <li>Another interesting result to contemplate can be demonstrated through the following simulation of 100 studies, each containing n = 6 observations of a fictitious toxic substance concentration (<span class="math inline">\mu g / l</span>) assumed to be <span class="math inline">\sim N(0.3, 0.12)</span>. For each sample the 95% confidence interval calculated:</li>
 </ul>
 
 <img data-src="images/CI_sim.png" class="r-stretch quarto-figure-center"><p class="caption">Depiction of confidence intervals from each of 100 simulated samples</p></section>
 
-<section id="a-little-more-on-confidence-intervals---unknown-variance-2" class="title-slide slide level1 center">
-<h1>A little more on confidence intervals - Unknown variance</h1>
+<section id="confidence-intervals---unknown-variance-2" class="title-slide slide level1 center">
+<h1>Confidence intervals - Unknown variance</h1>
 <ul>
 <li>Approximately 95% of these simulated samples have a confidence interval that includes the true value of 0.3 (<span class="math inline">\mu g / l</span>). In the graph above, a confidence interval includes the true mean value of 0.3 if the vertical line (representing the width of the CI) crosses the horizontal line.</li>
 <li>We have to accept that 5% of the time we will not capture the true mean.</li>
@@ -1005,8 +1017,8 @@ mean of x
 </ul>
 </section>
 
-<section id="example-one-sample-test" class="title-slide slide level1 center">
-<h1>Example: One sample test</h1>
+<section id="example-2-one-sample-test" class="title-slide slide level1 center">
+<h1>Example 2: One sample test</h1>
 <p>What happens when the assumptions are not met?</p>
 <ol type="1">
 <li>We can try and transform the data to make it more normal (and equal variance for later)</li>
@@ -1014,8 +1026,8 @@ mean of x
 </ol>
 </section>
 
-<section id="data-transformations" class="title-slide slide level1 center">
-<h1>Data transformations</h1>
+<section id="example-2-data-transformations" class="title-slide slide level1 center">
+<h1>Example 2: Data transformations</h1>
 <p>My data is not normal :( what can I do? - Sometimes we can transform our data to make it more normal. - Let’s look at an example: - Total nitrogen (TN) levels @ Wallacia in western Sydney on the Nepean River - According to the ANZECC guidelines, the maximum acceptable level of TN in an lowland river is 500 <span class="math inline">\mu g/L</span> and for an upland river = 250 <span class="math inline">\mu g/l</span>. (see Table 3.3.2 in Australian and New Zealand Guidelines for Fresh and Marine Water Quality)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>TN <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/TN_Wallacia.csv"</span>)</span>
@@ -1035,8 +1047,8 @@ mean of x
 </div>
 </section>
 
-<section id="state-hypothesis" class="title-slide slide level1 center">
-<h1>State Hypothesis</h1>
+<section id="example-2-state-hypothesis" class="title-slide slide level1 center">
+<h1>Example 2: State Hypothesis</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -1054,8 +1066,8 @@ mean of x
 </div>
 </section>
 
-<section id="check-assumptions" class="title-slide slide level1 center">
-<h1>Check assumptions</h1>
+<section id="example-2-check-assumptions" class="title-slide slide level1 center">
+<h1>Example 2: Check assumptions</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -1093,8 +1105,8 @@ mean of x
 </div>
 </section>
 
-<section id="check-assumptions-1" class="title-slide slide level1 center">
-<h1>Check assumptions</h1>
+<section id="example-2-check-assumptions-1" class="title-slide slide level1 center">
+<h1>Example 2: Check assumptions</h1>
 <p><strong>Shapiro-Wilk normality test</strong></p>
 <ul>
 <li>For smaller sample sizes, use the Shapiro-Wilk test (say &lt; 50)</li>
@@ -1115,8 +1127,8 @@ W = 0.92582, p-value = 0.04293</code></pre>
 </ul>
 </section>
 
-<section id="transformations" class="title-slide slide level1 center">
-<h1>Transformations</h1>
+<section id="example-2-transformations" class="title-slide slide level1 center">
+<h1>Example 2: Transformations</h1>
 <p>For right (positive) skewed data, we can use a</p>
 <ul>
 <li><span class="math inline">1/x</span> inverse transformation for highly skewed data.</li>
@@ -1129,8 +1141,8 @@ W = 0.92582, p-value = 0.04293</code></pre>
 </ul>
 </section>
 
-<section id="transformations-recheck-assumptions" class="title-slide slide level1 center">
-<h1>Transformations &amp; Recheck assumptions</h1>
+<section id="example-2-transformations-recheck-assumptions" class="title-slide slide level1 center">
+<h1>Example 2: Transformations &amp; Recheck assumptions</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Let's try a log10 transformation</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a><span class="co"># We start by creating a new column in our data frame called log10_TN</span></span>
@@ -1147,8 +1159,8 @@ W = 0.92582, p-value = 0.04293</code></pre>
 </div>
 </section>
 
-<section id="recheck-assumptions" class="title-slide slide level1 center">
-<h1>Recheck assumptions</h1>
+<section id="example-2-recheck-assumptions" class="title-slide slide level1 center">
+<h1>Example 2: Recheck assumptions</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -1186,8 +1198,8 @@ W = 0.92582, p-value = 0.04293</code></pre>
 </div>
 </section>
 
-<section id="recheck-assumptions-1" class="title-slide slide level1 center">
-<h1>Recheck assumptions</h1>
+<section id="example-2-recheck-assumptions-1" class="title-slide slide level1 center">
+<h1>Example 2: Recheck assumptions</h1>
 <p><strong>Shapiro-Wilk normality test</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">shapiro.test</span>(TN<span class="sc">$</span>log10_TN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1207,8 +1219,8 @@ W = 0.97279, p-value = 0.6375</code></pre>
 </ul>
 </section>
 
-<section id="t-test-p-value" class="title-slide slide level1 center">
-<h1>T-test &amp; P-Value</h1>
+<section id="example-2-t-test-p-value" class="title-slide slide level1 center">
+<h1>Example 2: T-test &amp; P-Value</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">t.test</span>(TN<span class="sc">$</span>log10_TN, <span class="at">mu=</span><span class="fu">log10</span>(<span class="dv">500</span>),</span>
 <span id="cb33-2"><a href="#cb33-2"></a>       <span class="at">alternative=</span><span class="st">"two.sided"</span>,</span>
@@ -1234,8 +1246,8 @@ mean of x
 </ul>
 </section>
 
-<section id="confidence-intervals-1" class="title-slide slide level1 center">
-<h1>Confidence intervals</h1>
+<section id="example-2-confidence-intervals" class="title-slide slide level1 center">
+<h1>Example 2: Confidence intervals</h1>
 <ul>
 <li>We need to back transform the confidence interval to the original scale.</li>
 <li>To back-transform the confidence interval we can use the following:</li>
@@ -1256,8 +1268,8 @@ mean of x
 </ul>
 </section>
 
-<section id="conclusion" class="title-slide slide level1 center">
-<h1>Conclusion</h1>
+<section id="example-2-conclusion" class="title-slide slide level1 center">
+<h1>Example 2: Conclusion</h1>
 <ol type="1">
 <li>The data was log10 transformed to meet the assumptions of the t-test.</li>
 <li>We have strong evidence that the mean value of Total Nitrogen in Nepean River is different to 500 ug/L.</li>
@@ -1266,8 +1278,8 @@ mean of x
 </ol>
 </section>
 
-<section id="one-tailed-test" class="title-slide slide level1 center">
-<h1>One tailed test</h1>
+<section id="example-3-one-tailed-test" class="title-slide slide level1 center">
+<h1>Example 3: One tailed test</h1>
 <ul>
 <li><p>We can also use a one tailed test if we are specifically interested in whether the observed value is greater or less than the expected value.</p></li>
 <li><p>In this case we only want to know if the TN concentration is greater than the ANZECC guidelines of 500 <span class="math inline">\mu g/l</span>.</p></li>
@@ -1276,8 +1288,8 @@ mean of x
 </ul>
 </section>
 
-<section id="one-tailed-test-1" class="title-slide slide level1 center">
-<h1>One tailed test</h1>
+<section id="example-3-one-tailed-test-1" class="title-slide slide level1 center">
+<h1>Example 3: One tailed test</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">t.test</span>(TN<span class="sc">$</span>log10_TN, <span class="at">mu=</span><span class="fu">log10</span>(<span class="dv">500</span>),</span>
 <span id="cb39-2"><a href="#cb39-2"></a>       <span class="at">alternative=</span><span class="st">"greater"</span>,</span>
@@ -1303,8 +1315,8 @@ mean of x
 </ul>
 </section>
 
-<section id="one-tailed-test-2" class="title-slide slide level1 center">
-<h1>One tailed test</h1>
+<section id="example-3-one-tailed-test-2" class="title-slide slide level1 center">
+<h1>Example 3: One tailed test</h1>
 <p><a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/j.2041-210X.2010.00014.x">Ruxton and Neuhäuser 2010</a></p>
 
 <img data-src="images\one_tail.png" class="r-stretch"></section>
