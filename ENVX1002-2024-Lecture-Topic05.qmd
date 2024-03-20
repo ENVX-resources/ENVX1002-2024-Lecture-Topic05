@@ -1028,6 +1028,8 @@ t.test(TN$log10_TN, mu=log10(500),
 This presentation is based on the [SOLES Quarto reveal.js template](https://github.com/usyd-soles-edu/soles-revealjs) and is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
 
 ```{r, echo=FALSE, eval=FALSE}
+renv::install("jhelvy/renderthis")
+renv::install("chromote")
 renderthis::to_pdf("ENVX1002-2024-Lecture-Topic05.html")
 ```
 
