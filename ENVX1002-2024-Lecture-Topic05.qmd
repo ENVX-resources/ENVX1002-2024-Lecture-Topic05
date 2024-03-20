@@ -241,9 +241,14 @@ More formally:
 
 - Let say we would like to test whether a sample or population behaves according to a known or expected value. For example, ENVX1002 students have a mean heart rate of 70 beats per minute $(c)$. We could test the relationship between our population or sample mean $(\mu)$ or $(y)$ and our expected mean $(c)$.
 
-  - $H_0:\mu=c$ $H_0:\mu \ne c$ *Two tailed*
-  - $H_0:\mu \ge c$ $H_0:\mu < c$ *One tailed*
-  - $H_0:\mu \le c$ $H_0:\mu > c$ *One tailed*
+  - $H_0:\mu=c$ *Two tailed*
+  - $H_1:\mu \ne c$ *Two tailed*
+  
+  - $H_0:\mu \ge c$ *One tailed - greater than*
+  - $H_1:\mu < c$ *One tailed - greater than*
+  
+  - $H_0:\mu \le c$ *One tailed - less than*
+  - $H_1:\mu > c$ *One tailed - less than*
   
 - We usually use the first (two tailed) form unless we are specifically interested in testing whether the difference is in one direction or the means of two variables are equivalent (i.e. equivalence testing in production)
 - In this course we are assuming that the population/sample is normally distributed.
