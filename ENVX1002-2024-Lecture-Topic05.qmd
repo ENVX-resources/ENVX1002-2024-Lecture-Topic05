@@ -221,6 +221,15 @@ Why is the p-value 0.05?
 
 
 
+# Conclusion (C)
+
+- We make a statistical conclusion based on the p-value and the level of significance.
+- We also make a scientific (biological) conclusion based on the statistical conclusion.
+
+
+
+
+
 
 # Tails
 
